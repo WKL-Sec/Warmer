@@ -9,3 +9,34 @@ Why warm up?
 - Outlook
 
 ![Warmer](https://user-images.githubusercontent.com/97109724/235449168-8e4d5399-c3a3-4e14-b4b7-7b4e0517a616.png)
+
+Blog Post
+- ["Can't Stop the Phish" - Tips for Warming Up Your Email Domain Right](https://whiteknightlabs.com/)
+
+## Requirements
+To run the script, you need to install the required Python packages. You can install these packages using pip:
+
+```bash
+pip3 install -r requirements.txt
+```
+
+## Usage
+To run the program, use the following command format:
+
+```bash
+python3 Warmer-OWA.py -u <Email ID to Warmup> -p <Password> -t <send_to_list.txt> -m 3
+```
+
+### Command Line Arguments
+
+The script supports the following command line arguments:
+
+```bash
+-h, --help:  Show this help message and exit
+-u: Sender Outlook Email ID
+-p: Sender Outlook Email Password
+-T: Single Target Email ID
+-t: Multiple Targets from Wordlist
+-x: No. of Emails to Send (applicable only for single targets)
+-m: Email Content Mode [ 1, 2, 3] where 1 = Gibberish sentence, 2 = AI-Generated, 3 = Randomly choose from pre-defined templates
+```
