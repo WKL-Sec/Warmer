@@ -8,9 +8,7 @@ Why warm up?
 - ProtonMail
 - Outlook
 
-![Warmer](https://user-images.githubusercontent.com/97109724/235449168-8e4d5399-c3a3-4e14-b4b7-7b4e0517a616.png)
-
-Blog Post
+**Blog Post**
 - ["Can't Stop the Phish" - Tips for Warming Up Your Email Domain Right](https://whiteknightlabs.com/)
 
 ## Requirements
@@ -21,7 +19,12 @@ pip3 install -r requirements.txt
 ```
 
 ## Usage
-To run the program, use the following command format:
+To warmup an account by sending 5 emails to a single target, use the following command format:
+
+```bash
+python3 Warmer-OWA.py -u <Email ID to Warmup> -p <Password> -T <target@contoso.com> -m 3 -x 5
+```
+To warmup an account against a list of targets from a file, use the following command format:
 
 ```bash
 python3 Warmer-OWA.py -u <Email ID to Warmup> -p <Password> -t <send_to_list.txt> -m 3
@@ -40,3 +43,4 @@ The script supports the following command line arguments:
 -x: No. of Emails to Send (applicable only for single targets)
 -m: Email Content Mode [ 1, 2, 3] where 1 = Gibberish sentence, 2 = AI-Generated, 3 = Randomly choose from pre-defined templates
 ```
+![Warmer](https://user-images.githubusercontent.com/97109724/235449168-8e4d5399-c3a3-4e14-b4b7-7b4e0517a616.png)
