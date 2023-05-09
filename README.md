@@ -8,7 +8,7 @@ Why warm up?
 - Outlook/Office365
 
 **Blog Post**
-- ["Can't Stop the Phish" - Tips for Warming Up Your Email Domain Right]([https://whiteknightlabs.com/](https://whiteknightlabs.com/2023/05/09/cant-stop-the-phish-tips-for-warming-up-your-email-domain-right/)
+- ["Can't Stop the Phish" - Tips for Warming Up Your Email Domain Right](https://whiteknightlabs.com/2023/05/09/cant-stop-the-phish-tips-for-warming-up-your-email-domain-right/)
 
 ## Requirements
 To run the script, you need to install the required Python packages. You can install these packages using pip:
