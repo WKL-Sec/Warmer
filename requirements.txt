@@ -1,0 +1,5 @@
+openai==0.27.5
+pyfiglet==0.8.post1
+selenium==4.9.1
+termcolor==2.3.0
+webdriver_manager==3.8.5
