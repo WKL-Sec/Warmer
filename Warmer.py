@@ -80,7 +80,7 @@ def send_owa_email(owa_login, owa_pass, email_list, counter, flag, email_mode):
         try:
 
             driver.find_element(By.CLASS_NAME, "label-186").click()
-            time.sleep(3)
+            time.sleep(10)
 
             if flag == 1:
                 email_to = email_list[i-1]
@@ -90,10 +90,10 @@ def send_owa_email(owa_login, owa_pass, email_list, counter, flag, email_mode):
                 email_to = email_list[0]
 		
             driver.switch_to.active_element.send_keys(email_to + '\n' + '\n' + '\t' + '\t' + email_subject + '\t' + email_message)
-            time.sleep(3)
+            time.sleep(6)
 
             driver.find_element(By.XPATH, "//button[@title='Send (Ctrl+Enter)' and contains(@class, 'ms-Button--primary')]").click()
-            time.sleep(3)
+            time.sleep(6)
 
             print("[+] Counter: {0}".format(i), end='\r')
 
@@ -129,7 +129,7 @@ def askGPT():
     return generated_text
 
 # Main
-prebanner = pyfiglet.figlet_format("Warmer - OWA")
+prebanner = pyfiglet.figlet_format("Warmer")
 VERSION = colored('VERSION: 1.0 \n\n-- Written by @Firestone65 --\n', 'red', attrs=['bold'])
 'Sender reputation warmer for phishing campaigns'
 banner = prebanner + "\n" + VERSION
@@ -143,10 +143,6 @@ parser.add_argument('-t', type=str, dest="t", required=False, help='Multiple Tar
 parser.add_argument('-x', type=int, required=False, help='No. of Emails to Send (applicable only for single targets)')
 parser.add_argument('-m', type=str, required=True, help='Email Content Mode [ 1, 2, 3] where 1 = Gibberish sentence, 2 = AI-Generated, 3 = Randomly choose from pre-defined templates')
 args = parser.parse_args()
-
-# Initialize Chrome driver
-options = webdriver.ChromeOptions()
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 # Distinguish between single vs. multiple recipients
 flag = 0
@@ -181,6 +177,10 @@ email_mode = args.m
 
 outlook_login = args.u
 outlook_pass = args.p
+
+# Initialize Chrome driver
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
 send_owa_email(outlook_login, outlook_pass, email_list, send_volume, flag, email_mode) 
 
